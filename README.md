@@ -1,6 +1,4 @@
-# react-native-learning-server
-
-
+# egg-reptile
 
 ## QuickStart
 
