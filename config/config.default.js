@@ -20,10 +20,10 @@ module.exports = appInfo => {
 
   config.sequelize = {
     host: '172.18.4.180',
-    password: 'Ip02016@mlS7639',
+    password: '',
     database: 'reptile_test',
     port: 3213,
-    username: 'higo_inf',
+    username: '',
     app: true,
     agent: false,
     pool: {
