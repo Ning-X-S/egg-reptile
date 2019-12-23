@@ -9,6 +9,7 @@ class HomeService extends Service {
     let data = {};
     try {
       const list = await ctx.model.ReptileModel.findAll();
+
       data = {
         error_code: 0,
         data: {
