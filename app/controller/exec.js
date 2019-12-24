@@ -2,11 +2,11 @@
 
 const Controller = require('egg').Controller;
 
-class HomeController extends Controller {
-  async exec() {
+class ExecController extends Controller {
+  async index() {
     const { ctx } = this;
     ctx.body = await this.service.exec.execIndex();
   }
 }
 
-module.exports = HomeController;
+module.exports = ExecController;
