@@ -28,7 +28,7 @@ class ExecService extends Service {
       };
     } catch (err) {
       data = {
-        error_code: 0,
+        error_code: 40000001,
         data: {},
         message: '失败',
       };

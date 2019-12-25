@@ -18,7 +18,7 @@ class ReadService extends Service {
       });
       const temPath = process.cwd();
       arr.forEach(item => {
-        console.log(path.join(process.cwd(), '/app', `/${item.name}`));
+        // console.log(path.join(process.cwd(), '/app', `/${item.name}`));
         process.chdir(temPath);
         const stat = fs.statSync(path.join(process.cwd(), '/app', `/${item.name}`));
         if (stat.isDirectory()) item.type = 'folder';
@@ -44,7 +44,7 @@ class ReadService extends Service {
       _utils.cosoleStyle().bgGreen(`chdir:${err}`);
       _utils.cosoleStyle().rainbow(`chdir:${err}`);
       data = {
-        error_code: 0,
+        error_code: 40000001,
         data: {},
         message: '失败',
       };
