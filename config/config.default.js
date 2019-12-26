@@ -10,13 +10,19 @@ module.exports = appInfo => {
    * built-in config
    * @type {Egg.EggAppConfig}
    **/
-  const config = exports = {};
+  const config = exports = {
+    security: {
+      csrf: {
+        enable: false,
+      },
+    },
+  };
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1575599825995_8182';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = [ 'auth' ];
 
   config.sequelize = {
     host: '172.18.4.180',

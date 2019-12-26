@@ -2,14 +2,18 @@
 const Service = require('egg').Service;
 const path = require('path');
 const fs = require('fs');
-const colors = require('colors');
 const _utils = require('../utils');
 
 class ReadService extends Service {
   async readFile() {
-    console.log(_utils);
     let data = {};
     try {
+      const { ctx } = this;
+      // console.log(ctx.request.body.read);
+      // console.log(Number(ctx.request.body.read));
+      if (Number(ctx.request.body.read) !== 1) {
+        throw new Error('No reading allowed');
+      }
       const fileList = fs.readdirSync(path.join(process.cwd(), '/app'));
       const arr = fileList.map(item => {
         return {
