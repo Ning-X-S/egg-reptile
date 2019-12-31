@@ -6,6 +6,7 @@ const Service = require('egg').Service;
 class HomeService extends Service {
   async findHot() {
     const { ctx } = this;
+    console.log(ctx.app.mysql);
     let data = {};
     try {
       const { page = 1, size: limit = 10 } = ctx.query;
@@ -42,7 +43,7 @@ class HomeService extends Service {
       };
     } catch (err) {
       data = {
-        error_code: 40000001,
+        error_code: 4000001,
         data: {},
         message: '查询失败',
       };

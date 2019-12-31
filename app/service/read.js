@@ -34,6 +34,8 @@ class ReadService extends Service {
           item.content = res;
         }
       });
+      console.log(_utils);
+      _utils.cosoleStyle().error('成功');
       data = {
         error_code: 0,
         data: {
@@ -48,7 +50,7 @@ class ReadService extends Service {
       _utils.cosoleStyle().bgGreen(`chdir:${err}`);
       _utils.cosoleStyle().rainbow(`chdir:${err}`);
       data = {
-        error_code: 40000001,
+        error_code: 4000001,
         data: {},
         message: '失败',
       };
