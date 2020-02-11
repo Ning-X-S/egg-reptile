@@ -9,19 +9,23 @@ class HomeService extends Service {
     console.log(ctx.app.mysql);
     let data = {};
     try {
-      const { page = 1, size: limit = 10 } = ctx.query;
+      console.log(ctx.query);
+      const { page = 1, size: limit = 10, id = null } = ctx.query;
       console.log(page);
       console.log(limit);
+      console.log(id);
+      console.log(limit * (page - 1));
       const queryObj = {
         attributes: [ 'id', 'title' ],
-        offset: parseInt(limit) * (page - 1),
+        offset: limit * (page - 1),
         limit: parseInt(limit),
-        where: {
-          id: 28,
-        },
+        where: {},
       };
+      if (id) {
+        queryObj.where.id = id;
+      }
       const list = await ctx.model.ReptileModel.findAll(queryObj);
-      console.log(ctx.request.body);
+      // console.log(ctx.request.body);
       console.log(ctx.query);
       // 当前文件夹的目录
       console.log(__dirname);
