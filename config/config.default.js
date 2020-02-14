@@ -16,10 +16,16 @@ module.exports = appInfo => {
         enable: false,
       },
     },
+    cluster: {
+      listen: {
+        port: 7878,
+      },
+    },
   };
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1575599825995_8182';
+
 
   // add your middleware config here
   config.middleware = [ 'auth' ];
@@ -29,7 +35,7 @@ module.exports = appInfo => {
     password: '',
     database: 'reptile_test',
     port: 3213,
-    username: '',
+    username: 'higo_inf',
     app: true,
     agent: false,
     pool: {

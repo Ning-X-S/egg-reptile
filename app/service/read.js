@@ -32,6 +32,8 @@ class ReadService extends Service {
           process.chdir(path.join(process.cwd(), '/app'));
           const res = fs.readFileSync(`${item.name}`, 'utf-8');
           item.content = res;
+        } else {
+          item.content = '';
         }
       });
       console.log(_utils);

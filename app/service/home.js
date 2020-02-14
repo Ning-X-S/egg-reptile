@@ -21,8 +21,9 @@ class HomeService extends Service {
         limit: parseInt(limit),
         where: {},
       };
+      console.log(id.split(','));
       if (id) {
-        queryObj.where.id = id;
+        queryObj.where.id = id.split(',');
       }
       const list = await ctx.model.ReptileModel.findAll(queryObj);
       // console.log(ctx.request.body);
